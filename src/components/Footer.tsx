@@ -4,12 +4,11 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="bg-azul text-white px-6 py-10 mt-12">
+    <footer className="bg-blueMain text-white px-6 py-10 mt-12">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
-        {/* Logo e info */}
         <div className="flex flex-col md:w-1/3 items-center md:items-start text-center md:text-left">
           <Image
-            src="/assets/images/logo_v2.svg"
+            src="/assets/images/logos/logo_v2.svg"
             alt="Logo Lattia"
             width={128}
             height={60}
@@ -18,14 +17,12 @@ const Footer = () => {
           <p className="text-sm leading-snug">Lattia con ❤️ desde 1997.</p>
         </div>
 
-        {/* Ubicaciones */}
         <div className="md:w-1/3 text-center md:text-left">
           <h4 className="text-lg font-semibold mb-2">Ubicaciones</h4>
           <p className="text-sm">Quito: Hoppe Norton y Rother. Esquina.</p>
           <p className="text-sm">Sangolquí: Subsuelo 1 del River Mall</p>
         </div>
 
-        {/* Contacto y redes */}
         <div className="md:w-1/3 text-center md:text-left">
           <h4 className="text-lg font-semibold mb-2">Contáctanos</h4>
           <p className="text-sm">

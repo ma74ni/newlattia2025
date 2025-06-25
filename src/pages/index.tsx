@@ -14,16 +14,16 @@ export default function Home() {
 
   return (
     <>
-      <section className="bg-gradient-to-b from-naranja to-crema rounded-t-lg">
+      <section className="bg-gradient-to-b from-orangeMain to-yellowMain rounded-t-lg">
         <div className="w-[90%] mx-auto flex flex-col md:flex-row justify-between items-center pt-12 gap-8">
           <Image
-            src="/assets/images/lattia_1.png"
+            src="/assets/images/banners/lattia-1.svg"
             alt="Lattia chart 1"
             width={286}
-            height={346}
-            className="w-56 md:w-[286px] h-auto object-contain"
+            height={364}
+            className="w-[286px] md:w-[286px] h-auto object-contain"
           />
-          <div className="text-center text-lila max-w-xl">
+          <div className="text-center text-purpleMain max-w-xl">
             <h2 className="font-nerko text-4xl md:text-[70px] leading-tight">HOLA! SOY LATTIA</h2>
             <p className="mt-4 text-base md:text-lg">
               Te doy la bienvenida con una gran sonrisa y mucho cariño. <br />
@@ -35,7 +35,7 @@ export default function Home() {
       </section>
 
       <section className="w-[90%] mx-auto py-12">
-        <h2 className="font-nerko text-3xl md:text-[36px] text-lila text-center md:text-left mb-6">LOS MIMADOS</h2>
+        <h2 className="text-center md:text-left mb-6">LOS MIMADOS</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {destacados.map((item) => (
             <div key={item.id} className="text-center p-4 bg-white rounded-lg shadow">
@@ -49,12 +49,12 @@ export default function Home() {
           ))}
         </div>
         <div className="text-center mt-12">
-          <a href="/menu" className="rounded-md bg-lila px-5 py-3 text-white text-lg hover:bg-lattia">Ver todo el menú</a>
+          <a href="/menu" className="rounded-md bg-purpleMain px-5 py-3 text-white text-lg hover:opacity-95">Ver todo el menú</a>
         </div>
       </section>
 
       <section className="w-[90%] mx-auto pb-12">
-        <h2 className="font-nerko text-3xl text-lila mb-6 text-center md:text-left">DEL BLOG</h2>
+        <h2 className="text-center md:text-left mb-6">DEL BLOG</h2>
         <div className="flex flex-col md:flex-row gap-6 items-center bg-white rounded-lg shadow p-4">
           <Image
             src={articulo.image}
@@ -70,6 +70,31 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section>
+      <div className="flex flex-col md:flex-row w-full">
+        <div className="bg-[#F7C482] flex-1 flex flex-col items-center justify-center text-center pt-6 md:pt-10">
+          <h2 className=" font-nerko text-purpleMain text-xl md:text-[35px] font-bold mb-4">SABÍAS QUÉ...</h2>
+          <div className="flex flex-col items-center md:items-start md:flex-row gap-4">
+            <Image
+              src="/assets/images/banners/lattia-2.svg"
+              alt="Lattia chart 2"
+            width={257}
+            height={263}
+              className="w-[257px] md:w-[257px]"
+            />
+            <p className="text-purpleMain text-base md:text-[20px] max-w-xs text-left">
+              Todos nuestros productos<br />
+              son elaborados de forma<br />
+              artesanal.
+            </p>
+          </div>
+        </div>
+        <div className="patron flex-1 bg-[#AC69AB] p-6 md:p-10"></div>
+      </div>
+    </section>
+    <section>
+      <div className="linea flex-1 p-6 md:py-[100px]"></div>
+    </section>
     </>
   );
 }

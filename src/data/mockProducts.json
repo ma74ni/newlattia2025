@@ -3,7 +3,7 @@
     "id": 1,
     "nombre": "Salpicón",
     "descripcion": "Mix de frutas, helado, crema y aderezos a tu gusto.",
-    "image": "/assets/images/salpicon.png",
+    "image": "/assets/images/products/salpicon.png",
     "destacado": true,
     "preciosPorLocal": {
       "local1": 2.75,
@@ -14,7 +14,7 @@
     "id": 2,
     "nombre": "Waffle con helado",
     "descripcion": "Waffle caliente con helado artesanal y toppings.",
-    "image": "/assets/images/waffle.png",
+    "image": "/assets/images/products/waffle.png",
     "destacado": true,
     "preciosPorLocal": {
       "local1": 3.5,
@@ -25,7 +25,7 @@
     "id": 3,
     "nombre": "Queso 3 sabores",
     "descripcion": "Queso rallado con tres sabores de helado combinados.",
-    "image": "/assets/images/queso_3_sabores.png",
+    "image": "/assets/images/products/queso_3_sabores.png",
     "destacado": true,
     "preciosPorLocal": {
       "local1": 3.5,

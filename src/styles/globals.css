@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-space: 'Space Grotesk', sans-serif;
+  --font-nerko: 'Nerko One', sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-space: var(--font-space);
+  --font-nerko: var(--font-nerko);
+
+  --color-primary: #1d1d1b;
+  --color-blueMain: #3973b9;
+  --color-orangeMain: #f18700;
+  --color-greenMain: #bdd24d;
+  --color-purpleMain: #964091;
+  --color-yellowMain: #fff6a0;
+
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-space);
+}
+
+header{
+  background-image: url('/assets/images/backgrounds/bck_header.jpg');
+  background-repeat: repeat-x;
+  background-position: top center;
+}
+h2{
+  font-family: var(--font-nerko);
+  color: var(--color-purpleMain);
+  font-size: 36px;
+}
+.patron{
+  background-image: url("/assets/images/backgrounds/patron_lattia.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-position: top;
+}
+.linea{
+  background-image: url("/assets/images/backgrounds/linea.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
