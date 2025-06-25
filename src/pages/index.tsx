@@ -3,6 +3,7 @@ import { Producto } from '@/interfaces/producto';
 import Image from 'next/image';
 import productos from '@/data/mockProducts.json';
 import articulo from '@/data/mockArticle.json';
+import Link from 'next/link';
 
 export default function Home() {
 
@@ -47,9 +48,11 @@ export default function Home() {
               <p className="text-lg font-bold text-lila mt-2">$ {item.preciosPorLocal?.local1?.toFixed(2)}</p>
             </div>
           ))}
-        </div>
         <div className="text-center mt-12">
-          <a href="/menu" className="rounded-md bg-purpleMain px-5 py-3 text-white text-lg hover:opacity-95">Ver todo el menú</a>
+          <Link href="/menu" className="rounded-md bg-purpleMain px-5 py-3 text-white text-lg hover:opacity-95">
+            Ver todo el menú
+          </Link>
+        </div>
         </div>
       </section>
 
