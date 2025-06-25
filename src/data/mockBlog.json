@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "por-que-los-helados-naturales",
+    "title": "¿Por qué los helados naturales saben mejor?",
+    "summary": "Descubre los secretos detrás del sabor artesanal y lo que hace especiales a nuestros helados.",
+    "image": "/assets/images/blog1.jpg"
+  },
+  {
+    "slug": "sabores-de-temporada",
+    "title": "Sabores de temporada: los favoritos del verano",
+    "summary": "Te contamos qué sabores se vuelven los más pedidos cuando el calor llega.",
+    "image": "/assets/images/blog2.jpg"
+  }
+]

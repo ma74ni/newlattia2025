@@ -8,7 +8,9 @@
     "preciosPorLocal": {
       "local1": 2.75,
       "local2": 2.50
-    }
+    },
+    "categorias":["todos", "base leche", "base agua", "fruta natural", "combos"]
+    
   },
   {
     "id": 2,
@@ -19,7 +21,8 @@
     "preciosPorLocal": {
       "local1": 3.5,
       "local2": 3.25
-    }
+    },
+    "categorias":["todos", "base leche"]
   },
   {
     "id": 3,
@@ -30,6 +33,7 @@
     "preciosPorLocal": {
       "local1": 3.5,
       "local2": 3.25
-    }
+    },
+    "categorias":["todos", "base agua"]
   }
 ]

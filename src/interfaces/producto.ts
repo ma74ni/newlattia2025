@@ -5,6 +5,7 @@ export interface Producto {
     image: string;
     destacado: boolean;
     preciosPorLocal?: PrecioPorLocal;
+    categorias: string[];
   }
 export interface PrecioPorLocal {
     [key: string]: number | undefined;

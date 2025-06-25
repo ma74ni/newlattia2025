@@ -1,6 +1,6 @@
 export interface Articulo {
-    image: string;
-    title: string;
-    summary: string;
-    link: string;
-  }
+  slug: string;
+  title: string;
+  summary: string;
+  image: string;
+}
