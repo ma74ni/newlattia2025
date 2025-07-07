@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://heladerialattia.com
+
+# Sitemaps
+Sitemap: https://heladerialattia.com/sitemap.xml
