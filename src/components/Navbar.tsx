@@ -7,6 +7,7 @@ import { Menu, X, ShoppingBasket } from 'lucide-react';
 import { CartContext } from '@/context/CartContext';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { navbarItems } from '@/data';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -14,6 +15,7 @@ const Navbar = () => {
   const carrito = cartContext?.carrito ?? [];
   const [showMenu, setShowMenu] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const showShoppingBag = false
 
 
   const isActive = (path: string) =>
@@ -51,20 +53,28 @@ const Navbar = () => {
           <div className="flex flex-col md:flex-row text-primary justify-end items-center font-semibold gap-4 w-full md:w-auto text-center">
             {(showMenu || isDesktop) && (
               <nav className="flex flex-col md:flex-row">
-                <Link href="/" className={`px-2 border-b-2 ${isActive('/')} hover:border-yellowMain`}>Inicio</Link>
-                <Link href="/menu" className={`px-2 border-b-2 ${isActive('/menu')} hover:border-yellowMain`}>Menú</Link>
-                <Link href="/nosotros" className={`px-2 border-b-2 ${isActive('/nosotros')} hover:border-yellowMain`}>Nosotros</Link>
-                <Link href="/blog" className={`px-2 border-b-2 ${isActive('/blog')} hover:border-yellowMain`}>Blog</Link>
-                <Link href="/contacto" className={`px-2 border-b-2 ${isActive('/contacto')} hover:border-yellowMain`}>Contacto</Link>
+                {navbarItems
+                  .filter(item => item.visible !== false) // oculta si visible es false
+                  .map(item => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={`px-2 border-b-2 ${isActive(item.href)} hover:border-yellowMain`}
+                    >
+                      {item.label}
+                    </Link>
+                ))}
               </nav>
             )}
 
-            <div className="relative cursor-pointer">
-              <ShoppingBasket className="w-5 h-5 text-lila" />
-              <span className="absolute top-[-5px] right-[-10px] bg-lila text-white rounded-full w-4 h-4 text-xs flex items-center justify-center">
-                {carrito.length}
-              </span>
-            </div>
+            {showShoppingBag && (
+              <div className="relative cursor-pointer">
+                <ShoppingBasket className="w-5 h-5 text-lila" />
+                <span className="absolute top-[-5px] right-[-10px] bg-lila text-white rounded-full w-4 h-4 text-xs flex items-center justify-center">
+                  {carrito.length}
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </div>
