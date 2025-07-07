@@ -29,7 +29,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="bg-white px-4 pb-4 pt-2">
+    <header className="bg-white px-4 pb-4 pt-2 dark:bg-amber-600">
       <div className="max-w-7xl mx-auto">
         <p className="text-center md:text-right text-sm text-white">
           Pedidos a domicilio: <a href="https://wa.me/+593999293638" target="_blank" className="font-semibold">+593 99 929 3638</a>
@@ -40,7 +40,7 @@ const Navbar = () => {
             alt="Logo Lattia"
             width={194}
             height={160}
-            className="w-[194px] h-auto"
+            className="w-[194px] h-auto image-logo"
             />
 
           {/* Botón hamburguesa */}
