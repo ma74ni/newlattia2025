@@ -14,7 +14,7 @@ const SEO = {
     description: 'Helados artesanales, postres únicos y momentos inolvidables.',
     images: [
       {
-        url: 'https://heladerialattia.com/images/og-image.jpg',
+        url: 'https://heladerialattia.com/assets/images/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Heladería Lattia - Helados artesanales',
