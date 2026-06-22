@@ -1,5 +1,11 @@
-import type { jsPDF } from 'jspdf';
-import { carta, CartaCategoria } from '@/data/carta';
+import { jsPDF } from 'jspdf';
+import {
+  cartaParaLocal,
+  CartaCategoria,
+  LocalId,
+  locales,
+  precioPara,
+} from '@/data/carta';
 
 const PURPLE: [number, number, number] = [150, 64, 145];
 const ORANGE: [number, number, number] = [241, 135, 0];
@@ -16,7 +22,7 @@ const COLS = [MARGIN, MARGIN + COL_W + COL_GAP];
 const TOP_Y = 42;
 const MAX_Y = 282;
 
-function drawHeader(doc: jsPDF) {
+function drawHeader(doc: jsPDF, localNombre: string) {
   doc.setFont('helvetica', 'bold');
   doc.setTextColor(...PURPLE);
   doc.setFontSize(24);
@@ -25,7 +31,9 @@ function drawHeader(doc: jsPDF) {
   doc.setFont('helvetica', 'normal');
   doc.setTextColor(...ORANGE);
   doc.setFontSize(12);
-  doc.text('Nuestra Carta', PAGE_W / 2, 28, { align: 'center' });
+  doc.text(`Nuestra Carta · ${localNombre}`, PAGE_W / 2, 28, {
+    align: 'center',
+  });
 
   doc.setDrawColor(...ORANGE);
   doc.setLineWidth(0.5);
@@ -36,7 +44,13 @@ function estimateHeight(cat: CartaCategoria) {
   return 6 + (cat.nota ? 4 : 0) + cat.items.length * 5 + 5;
 }
 
-function drawCategory(doc: jsPDF, cat: CartaCategoria, x: number, y: number) {
+function drawCategory(
+  doc: jsPDF,
+  cat: CartaCategoria,
+  x: number,
+  y: number,
+  local: LocalId
+) {
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(13);
   doc.setTextColor(...PURPLE);
@@ -64,36 +78,40 @@ function drawCategory(doc: jsPDF, cat: CartaCategoria, x: number, y: number) {
 
     doc.setFont('helvetica', 'bold');
     doc.setTextColor(...PURPLE);
-    doc.text(formatPrecio(item.precio), x + COL_W, y, { align: 'right' });
+    doc.text(formatPrecio(precioPara(item, local)), x + COL_W, y, {
+      align: 'right',
+    });
     y += 5;
   }
 
   return y + 5;
 }
 
-export async function generateCartaPdf() {
-  const { jsPDF } = await import('jspdf');
+export function generateCartaPdf(local: LocalId = 'quito') {
   const doc = new jsPDF({ unit: 'mm', format: 'a4' });
 
-  drawHeader(doc);
+  const localNombre = locales.find((l) => l.id === local)?.nombre ?? '';
+  const categorias = cartaParaLocal(local);
+
+  drawHeader(doc, localNombre);
 
   let col = 0;
   let y = TOP_Y;
 
-  for (const cat of carta) {
+  for (const cat of categorias) {
     if (y + estimateHeight(cat) > MAX_Y) {
       if (col === 0) {
         col = 1;
         y = TOP_Y;
       } else {
         doc.addPage();
-        drawHeader(doc);
+        drawHeader(doc, localNombre);
         col = 0;
         y = TOP_Y;
       }
     }
-    y = drawCategory(doc, cat, COLS[col], y);
+    y = drawCategory(doc, cat, COLS[col], y, local);
   }
 
-  doc.save('carta-lattia.pdf');
+  doc.save(`carta-lattia-${local}.pdf`);
 }

@@ -6,8 +6,8 @@
     "image": "/assets/images/products/salpicon.png",
     "destacado": true,
     "preciosPorLocal": {
-      "local1": 2.75,
-      "local2": 2.50
+      "local1": 3.00,
+      "local2": 3.00
     },
     "categorias":["todos", "base leche", "base agua", "fruta natural", "combos"]
     
@@ -19,8 +19,8 @@
     "image": "/assets/images/products/waffle.png",
     "destacado": true,
     "preciosPorLocal": {
-      "local1": 3.5,
-      "local2": 3.25
+      "local1": 4.00,
+      "local2": 4.00
     },
     "categorias":["todos", "base leche"]
   },
