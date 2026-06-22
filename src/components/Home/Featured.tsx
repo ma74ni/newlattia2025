@@ -23,8 +23,8 @@ const Featured = ({featured}: FeaturedProps) => {
     ))}
     </div>
     <div className="text-center mt-12">
-    <Link href="/menu" className="rounded-md bg-purpleMain px-5 py-3 text-white text-lg hover:opacity-95">
-        Ver todo el menú
+    <Link href="/carta" className="rounded-md bg-purpleMain px-5 py-3 text-white text-lg hover:opacity-95">
+        Ver toda la carta
     </Link>
     </div>
     </>

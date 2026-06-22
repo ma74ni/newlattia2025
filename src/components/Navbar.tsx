@@ -32,7 +32,7 @@ const Navbar = () => {
     <header className="bg-white px-4 pb-4 pt-2 dark:bg-white">
       <div className="max-w-7xl mx-auto">
         <p className="text-center md:text-right text-sm text-white">
-          Pedidos a domicilio: <a href="https://wa.me/+593999293638" target="_blank" className="font-semibold">+593 99 929 3638</a>
+          Pedidos a domicilio: <a href="https://wa.me/593983766954" target="_blank" className="font-semibold">+593 98 376 6954</a>
         </p>
         <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-4 mt-2">
           <Link href={'/'}>

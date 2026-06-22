@@ -94,7 +94,7 @@ const quitarDelCarrito: QuitarDelCarrito = (index) => {
       `👋 ¡Hola! Quiero hacer un pedido:\n\n${mensaje}\n\n💰 *Total:* $${total}\n\n${cliente}${direccion}`
     );
 
-    const telefono = '593XXXXXXXXX'; // Reemplazar con tu número
+    const telefono = '593983766954';
     const url = `https://wa.me/${telefono}?text=${texto}`;
     window.open(url, '_blank');
   };
