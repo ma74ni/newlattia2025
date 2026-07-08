@@ -61,15 +61,16 @@ export const carta: CartaCategoria[] = [
     nombre: "Conos",
     items: [
       { nombre: "Tía", precio: 2.6 },
-      { nombre: "Mega", precio: 2.25 },
+      { nombre: "Mega", precio: 2.25, precioSangolqui: 2.0 },
       { nombre: "Doble", precio: 1.8 },
       { nombre: "Simple", precio: 1.25 },
-      { nombre: "Mini", precio: 0.6, locales: ["quito"] },
+      { nombre: "Mini", precio: 0.6, precioSangolqui: 0.75 },
     ],
   },
   {
     nombre: "Tulipanes",
     items: [
+      { nombre: "Tía", precio: 3.5, locales: ["sangolqui"] },
       { nombre: "Doble", precio: 2.8 },
       { nombre: "Simple", precio: 2.25 },
     ],
@@ -88,7 +89,7 @@ export const carta: CartaCategoria[] = [
   {
     nombre: "Con Queso",
     items: [
-      { nombre: "Soft", precio: 3.5 },
+      { nombre: "Soft", precio: 3.5, locales: ["quito"] },
       { nombre: "Tres Sabores", precio: 3.5 },
     ],
   },
@@ -110,7 +111,7 @@ export const carta: CartaCategoria[] = [
   },
   {
     nombre: "Palitos",
-    items: [{ nombre: "Grande", precio: 1.0 }],
+    items: [{ nombre: "Grande", precio: 1.0, precioSangolqui: 1.25 }],
   },
   {
     nombre: "Chocobanana",
@@ -118,9 +119,9 @@ export const carta: CartaCategoria[] = [
   },
   {
     nombre: "Granizado",
-    nota: "Lunes a viernes",
+    nota: "* Sólo de lunes a viernes",
     items: [
-      { nombre: "Pequeño", precio: 0.5, locales: ["quito"] },
+      { nombre: "Pequeño*", precio: 0.5, locales: ["quito"] },
       { nombre: "Grande", precio: 1.0, locales: ["quito"] },
     ],
   },
@@ -134,24 +135,24 @@ export const carta: CartaCategoria[] = [
   {
     nombre: "Espumilla",
     items: [
-      { nombre: "Pequeña", precio: 0.5 },
-      { nombre: "Grande", precio: 1.0 },
+      { nombre: "Pequeña", precio: 0.5, precioSangolqui: 1.00 },
+      { nombre: "Grande", precio: 1.0, precioSangolqui: 1.50 },
     ],
   },
   {
     nombre: "Gelatina",
     items: [
-      { nombre: "Simple", precio: 0.5 },
-      { nombre: "Crema", precio: 1.75 },
-      { nombre: "Espumilla", precio: 1.0 },
+      { nombre: "Simple", precio: 0.5, precioSangolqui: 1.0 },
+      { nombre: "Crema", precio: 1.75, precioSangolqui: 1.8 },
+      { nombre: "Espumilla", precio: 1.0, precioSangolqui: 1.5 },
     ],
   },
   {
     nombre: "Flan",
     items: [
       { nombre: "Simple", precio: 1.0 },
-      { nombre: "Crema", precio: 2.0 },
-      { nombre: "Espumilla", precio: 1.5 },
+      { nombre: "Crema", precio: 2.0, precioSangolqui: 1.8 },
+      { nombre: "Espumilla", precio: 1.5, precioSangolqui: 1.5 },
     ],
   },
   {
