@@ -193,4 +193,11 @@ export const carta: CartaCategoria[] = [
       { nombre: "Barquillos", precio: 1.0, locales: ["quito"] },
     ],
   },
+  {
+    nombre: "Bajo Pedido",
+    items: [
+      { nombre: "Piña Hawaiana", precio: 4.0, locales: ["quito"] },
+      { nombre: "Durazno con Crema", precio: 3.5, locales: ["quito"] },
+    ],
+  },
 ];
