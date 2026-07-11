@@ -91,31 +91,37 @@ export const carta: CartaCategoria[] = [
     items: [
       { nombre: "Soft", precio: 3.5, locales: ["quito"] },
       { nombre: "Tres Sabores", precio: 3.5 },
+      { nombre: "Vasito 1 Sabor", precio: 2.25, locales: ["quito"] },
+      { nombre: "Vasito 2 Sabores", precio: 2.8, locales: ["quito"] },
     ],
   },
   {
     nombre: "Salpicón",
-    items: [{ nombre: "Grande", precio: 3.0 }],
+    items: [{ nombre: "", precio: 3.0 }],
   },
   {
     nombre: "Milkshake",
-    items: [{ nombre: "Grande", precio: 3.0 }],
+    items: [{ nombre: "", precio: 3.0 }],
   },
   {
     nombre: "Bananasplit",
-    items: [{ nombre: "Grande", precio: 3.5 }],
+    items: [{ nombre: "", precio: 3.5 }],
   },
   {
     nombre: "Waffle",
-    items: [{ nombre: "Grande", precio: 4.0, locales: ["quito"] }],
+    items: [{ nombre: "", precio: 4.0, locales: ["quito"] }],
   },
   {
     nombre: "Palitos",
-    items: [{ nombre: "Grande", precio: 1.0, precioSangolqui: 1.25 }],
+    items: [
+      { nombre: "Base Crema", precio: 1.25 },
+      { nombre: "Base Leche", precio: 1.25 },
+      { nombre: "Base Agua", precio: 1.0 },
+    ],
   },
   {
     nombre: "Chocobanana",
-    items: [{ nombre: "Grande", precio: 1.25 }],
+    items: [{ nombre: "", precio: 1.25 }],
   },
   {
     nombre: "Granizado",
@@ -137,6 +143,8 @@ export const carta: CartaCategoria[] = [
     items: [
       { nombre: "Pequeña", precio: 0.5, precioSangolqui: 1.00 },
       { nombre: "Grande", precio: 1.0, precioSangolqui: 1.50 },
+      { nombre: "Espumilla + Queso", precio: 2.25, locales: ["quito"] },
+      { nombre: "Crema + Queso", precio: 2.75, locales: ["quito"] },
     ],
   },
   {
@@ -172,6 +180,17 @@ export const carta: CartaCategoria[] = [
       { nombre: "Espumilla", precio: 2.0, locales: ["quito"] },
       { nombre: "Crema", precio: 2.5, locales: ["quito"] },
       { nombre: "Choco + Crema", precio: 2.5, locales: ["quito"] },
+    ],
+  },
+  {
+    nombre: "Yogurt",
+    items: [{ nombre: "Fruta y Granola", precio: 2.5, locales: ["quito"] }],
+  },
+  {
+    nombre: "Acompañantes",
+    items: [
+      { nombre: "Qesadilla", precio: 0.6, locales: ["quito"] },
+      { nombre: "Barquillos", precio: 1.0, locales: ["quito"] },
     ],
   },
 ];
