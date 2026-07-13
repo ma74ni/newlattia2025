@@ -6,6 +6,7 @@ import {
   MessageCircle,
   Mail,
   MapPin,
+  Navigation,
   Globe,
   Download,
   Share2,
@@ -65,8 +66,16 @@ const servicios = [
 ];
 
 const locales = [
-  { ciudad: 'Quito', direccion: 'Hoppe Norton y Rother. Esquina.' },
-  { ciudad: 'Sangolquí', direccion: 'Subsuelo 1 del River Mall.' },
+  {
+    ciudad: 'Quito',
+    direccion: 'Hoppe Norton y Rother. Esquina.',
+    mapa: 'https://maps.app.goo.gl/tgiy3sUL7oD7vRRF7',
+  },
+  {
+    ciudad: 'Sangolquí',
+    direccion: 'Subsuelo 1 del River Mall.',
+    mapa: 'https://maps.app.goo.gl/GnaMphpjLKGd28e59',
+  },
 ];
 
 const buildVCard = () =>
@@ -208,18 +217,26 @@ export default function InfoPage() {
               Encuéntranos
             </h2>
             <ul className="flex flex-col gap-3">
-              {locales.map(({ ciudad, direccion }) => (
-                <li
-                  key={ciudad}
-                  className="flex items-start gap-3 rounded-xl bg-purpleMain/5 p-3"
-                >
-                  <MapPin className="text-orangeMain shrink-0 mt-0.5" size={20} />
-                  <div>
-                    <p className="font-semibold text-purpleMain leading-tight">
-                      {ciudad}
-                    </p>
-                    <p className="text-sm text-gray-600">{direccion}</p>
-                  </div>
+              {locales.map(({ ciudad, direccion, mapa }) => (
+                <li key={ciudad}>
+                  <a
+                    href={mapa}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 rounded-xl bg-purpleMain/5 p-3 hover:bg-purpleMain/10 transition"
+                  >
+                    <MapPin className="text-orangeMain shrink-0" size={20} />
+                    <div className="flex-1">
+                      <p className="font-semibold text-purpleMain leading-tight">
+                        {ciudad}
+                      </p>
+                      <p className="text-sm text-gray-600">{direccion}</p>
+                    </div>
+                    <span className="flex items-center gap-1 text-xs font-semibold text-orangeMain shrink-0">
+                      <Navigation size={14} />
+                      Ver mapa
+                    </span>
+                  </a>
                 </li>
               ))}
             </ul>
