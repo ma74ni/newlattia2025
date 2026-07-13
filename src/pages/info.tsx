@@ -17,6 +17,7 @@ import {
   Banana,
   PartyPopper,
   Truck,
+  BookOpen,
 } from 'lucide-react';
 
 const WHATSAPP = '593983766954';
@@ -169,6 +170,16 @@ export default function InfoPage() {
             >
               <MessageCircle size={20} />
               Escríbenos por WhatsApp
+            </a>
+
+            <a
+              href="https://heladerialattia.com/carta"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-orangeMain text-white px-5 py-3 rounded-xl font-semibold hover:bg-purpleMain transition"
+            >
+              <BookOpen size={20} />
+              Ver la carta
             </a>
 
             <div className="grid grid-cols-2 gap-3">
