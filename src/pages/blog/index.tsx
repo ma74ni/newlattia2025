@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import { Articulo } from '@/interfaces/articulo';
 import articulos from '@/data/mockBlog.json';
 import Link from 'next/link';
@@ -8,6 +9,7 @@ export default function BlogIndexPage() {
 
   return (
     <div className="w-[90%] max-w-7xl mx-auto py-12">
+      <NextSeo title="Blog" noindex nofollow />
       <h1 className="text-3xl md:text-5xl font-nerko text-lila mb-10 text-center">Nuestro Blog</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

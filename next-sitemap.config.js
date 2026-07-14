@@ -4,10 +4,11 @@ module.exports = {
   generateRobotsTxt: true, // genera también robots.txt
   // /info es una tarjeta de presentación pública pero no forma parte del sitio:
   // se excluye del sitemap y se bloquea en robots.txt (además de noindex en la página).
-  exclude: ['/info'],
+  // /blog aún no tiene acceso desde el menú, se excluye mientras tanto (también noindex en la página).
+  exclude: ['/info', '/blog', '/blog/*'],
   robotsTxtOptions: {
     policies: [
-      { userAgent: '*', allow: '/', disallow: '/info' },
+      { userAgent: '*', allow: '/', disallow: ['/info', '/blog'] },
     ],
   },
 };

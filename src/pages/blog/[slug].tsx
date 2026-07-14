@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
+import { NextSeo } from 'next-seo';
 import { Articulo } from '@/interfaces/articulo';
 import articulos from '@/data/mockBlog.json';
 import Image from 'next/image';
@@ -18,6 +19,7 @@ export default function BlogDetallePage({ articulo }: Props) {
 
   return (
     <div className="w-[90%] max-w-4xl mx-auto py-12">
+      <NextSeo title={articulo.title} noindex nofollow />
       <Link href="/blog" className="text-lila text-sm hover:underline">← Volver al blog</Link>
 
       <h1 className="text-3xl md:text-5xl font-nerko text-lila my-6">{articulo.title}</h1>
