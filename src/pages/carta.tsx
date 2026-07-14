@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { NextSeo } from 'next-seo';
 import { cartaParaLocal, locales, precioPara, LocalId } from '@/data/carta';
-import { generateCartaPdf } from '@/utils/generateCartaPdf';
 
 const formatPrecio = (precio: number) =>
   `$${precio.toFixed(2).replace('.', ',')}`;
@@ -92,7 +91,10 @@ export default function CartaPage() {
         <div className="text-center mt-12">
           <button
             type="button"
-            onClick={() => generateCartaPdf(local)}
+            onClick={async () => {
+              const { generateCartaPdf } = await import('@/utils/generateCartaPdf');
+              generateCartaPdf(local);
+            }}
             className="inline-block bg-purpleMain text-white px-6 py-3 rounded-md text-lg hover:bg-orangeMain transition cursor-pointer"
           >
             Descargar carta de {localActual.nombre} en PDF

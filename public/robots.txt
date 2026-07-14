@@ -1,6 +1,8 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /info
+Disallow: /blog
 
 # Host
 Host: https://heladerialattia.com

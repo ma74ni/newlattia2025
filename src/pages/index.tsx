@@ -1,11 +1,105 @@
 //import { Articulo } from '@/interfaces/articulo';
 import { Producto } from '@/interfaces/producto';
+import Head from 'next/head';
 import Image from 'next/image';
 import productos from '@/data/mockProducts.json';
 import articulo from '@/data/mockArticle.json';
 import Banner from '@/components/Home/Banner';
 import Featured from '@/components/Home/Featured';
 import ArticleBlog from '@/components/Home/ArticleBlog';
+
+const SOCIAL_LINKS = [
+  'https://facebook.com/heladoslattia.ec',
+  'https://instagram.com/heladoslattia.ec',
+  'https://tiktok.com/@heladoslattia.ec',
+];
+
+const businessJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'IceCreamShop',
+      '@id': 'https://heladerialattia.com/#quito',
+      name: 'Heladería Lattia - Quito',
+      image: 'https://heladerialattia.com/assets/images/og-image.jpg',
+      url: 'https://heladerialattia.com',
+      telephone: '+593983766954',
+      priceRange: '$',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Hoppe Norton y Rother, esquina',
+        addressLocality: 'Quito',
+        addressCountry: 'EC',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: -0.25455479999999997,
+        longitude: -78.51785009999999,
+      },
+      hasMap: 'https://maps.app.goo.gl/tgiy3sUL7oD7vRRF7',
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: [
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday',
+            'Saturday',
+            'Sunday',
+          ],
+          opens: '11:00',
+          closes: '19:00',
+        },
+      ],
+      sameAs: SOCIAL_LINKS,
+    },
+    {
+      '@type': 'IceCreamShop',
+      '@id': 'https://heladerialattia.com/#sangolqui',
+      name: 'Heladería Lattia - Sangolquí',
+      image: 'https://heladerialattia.com/assets/images/og-image.jpg',
+      url: 'https://heladerialattia.com',
+      telephone: '+593983766954',
+      priceRange: '$',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Subsuelo 1, River Mall',
+        addressLocality: 'Sangolquí',
+        addressCountry: 'EC',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: -0.3239585105549343,
+        longitude: -78.45006587864584,
+      },
+      hasMap: 'https://maps.app.goo.gl/GnaMphpjLKGd28e59',
+      openingHoursSpecification: [
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: [
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday',
+            'Saturday',
+          ],
+          opens: '10:00',
+          closes: '20:00',
+        },
+        {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Sunday'],
+          opens: '10:00',
+          closes: '19:00',
+        },
+      ],
+      sameAs: SOCIAL_LINKS,
+    },
+  ],
+};
 
 export default function Home() {
 
@@ -23,6 +117,12 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
+        />
+      </Head>
       <section className="bg-gradient-to-b from-orangeMain to-yellowMain rounded-t-lg">
         <Banner />
       </section>
