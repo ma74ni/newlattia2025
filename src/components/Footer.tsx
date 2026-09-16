@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Music } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Footer = () => {
@@ -61,6 +62,12 @@ const Footer = () => {
       </div>
 
       <div className="mt-8 text-center text-xs text-white/80">
+        <Link href="/rifa" className="underline hover:text-white">
+          Bases legales: Rifa de Aniversario 2026
+        </Link>
+      </div>
+
+      <div className="mt-3 text-center text-xs text-white/80">
         © 2025 Heladería Lattia. Todos los derechos reservados.
       </div>
     </footer>
