@@ -4,8 +4,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 import productos from '@/data/mockProducts.json';
 import articulo from '@/data/mockArticle.json';
-import Banner from '@/components/Home/Banner';
+import HomeCarousel from '@/components/Home/HomeCarousel';
 import Featured from '@/components/Home/Featured';
+import ConfettiOnLoad from '@/components/ConfettiOnLoad';
 import ArticleBlog from '@/components/Home/ArticleBlog';
 
 const SOCIAL_LINKS = [
@@ -123,8 +124,9 @@ export default function Home() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
         />
       </Head>
+      <ConfettiOnLoad />
       <section className="bg-gradient-to-b from-orangeMain to-yellowMain rounded-t-lg">
-        <Banner />
+        <HomeCarousel />
       </section>
       {showFeatured && (
         <section className="w-[90%] mx-auto py-12">

@@ -2,6 +2,7 @@
 
 import { NextSeo } from 'next-seo';
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   MessageCircle,
   Mail,
@@ -19,6 +20,7 @@ import {
   Truck,
   BookOpen,
 } from 'lucide-react';
+import ConfettiOnLoad from '@/components/ConfettiOnLoad';
 
 const WHATSAPP = '593983766954';
 const WHATSAPP_DISPLAY = '+593 98 376 6954';
@@ -138,6 +140,7 @@ export default function InfoPage() {
         nofollow
       />
 
+      <ConfettiOnLoad />
       <main className="min-h-screen w-full bg-gradient-to-b from-purpleMain via-purpleMain to-orangeMain px-4 py-8 flex items-center justify-center">
         <div className="w-full max-w-md rounded-3xl bg-white shadow-2xl overflow-hidden">
           {/* Encabezado */}
@@ -158,6 +161,23 @@ export default function InfoPage() {
             <p className="text-center text-gray-500 text-sm">
               Helados artesanales · Quito y Sangolquí
             </p>
+          </div>
+
+          {/* Aniversario / Rifa */}
+          <div className="px-6 pb-4">
+            <Link
+              href="/rifa"
+              aria-label="Conoce la Rifa de Aniversario Lattia 2026"
+              className="block relative w-full aspect-[8/3] rounded-xl overflow-hidden shadow-md ring-1 ring-purpleMain/10"
+            >
+              <Image
+                src="/assets/images/banners/aniversario-rifa.jpg"
+                alt="Estamos de Aniversario - Rifa de Aniversario Lattia 2026"
+                fill
+                sizes="400px"
+                className="object-cover"
+              />
+            </Link>
           </div>
 
           {/* Acciones principales */}
